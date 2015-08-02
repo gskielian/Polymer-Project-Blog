@@ -24,6 +24,8 @@
   <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
   <link rel="import" href="bower_components/paper-material/paper-material.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+  <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
+  <link rel="import" href="bower_components/iron-icon/iron-icon.html">
   <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
     <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
@@ -47,6 +49,29 @@
   <link rel="stylesheet" href="bower_components/paper-styles/demo.css">
 
   <style is="custom-style">
+    .avatar {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #ccc;
+    }
+    .blue {
+      background-color: var(--paper-light-blue-300);
+    }
+    .red {
+      background-color: var(--paper-red-300);
+    }
+    .orange {
+      background-color: var(--paper-amber-300);
+    }
+    .purple {
+      background-color: var(--paper-deep-purple-800);
+    }
+    .green {
+      background-color: var(--paper-green-300);
+    }
 
     paper-scroll-header-panel {
       position: absolute;
@@ -97,7 +122,45 @@
     <paper-toolbar style="background-color:#aaa">
       <div class="bottom title" style="padding-top: 4px; padding-bottom: 4px; text-style:center">Project Index</div>
     </paper-toolbar>
-    <div > Drawer content... </div>
+    <div>
+      <div class="list short">
+        <br/>
+        <div style="position:relative">
+        <paper-icon-item onclick="onSectionClick(1)">
+          <div class="avatar red" item-icon></div>  INA230 PCB Sch/Lyt
+          <paper-ripple></paper-ripple>
+        </paper-icon-item>
+      </div>
+        <div style="position:relative">
+        <paper-icon-item onclick="onSectionClick(4)">
+          <div class="avatar green" item-icon></div> TabForBPM App
+          <paper-ripple></paper-ripple>
+        </paper-icon-item>
+      </div>
+        <div style="position:relative">
+        <paper-icon-item onclick="onSectionClick(5)">
+          <div class="avatar purple" item-icon></div> HTML5 Projects
+          <paper-ripple></paper-ripple>
+        </paper-icon-item>
+      </div>
+        <div style="position:relative">
+        <paper-icon-item onclick="onSectionClick(3)">
+          <div class="avatar blue" item-icon></div> CCounter Project
+          <paper-ripple></paper-ripple>
+        </paper-icon-item>
+      </div>
+      </div>
+    </div>
+  <!-- <link rel="import" href="blog-content-ee.html"> -->
+  <!-- <link rel="import" href="ee-portfolio-entry.html"> -->
+  <!-- <link rel="import" href="dn-portfolio-entry.html"> -->
+  <!-- <link rel="import" href="fw-portfolio-entry.html"> -->
+  <!-- <link rel="import" href="android-portfolio-entry.html"> -->
+  <!-- <link rel="import" href="ws-portfolio-entry.html"> -->
+  <!-- <link rel="import" href="blog-content-android.html"> -->
+  <!-- <link rel="import" href="blog-content-fw.html"> -->
+  <!-- <link rel="import" href="blog-content-dn.html"> -->
+  <!-- <link rel="import" href="blog-content-ws.html"> -->
   </paper-header-panel>
 
   <paper-header-panel main>

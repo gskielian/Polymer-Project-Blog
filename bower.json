@@ -27,6 +27,7 @@
     "paper-scroll-header-panel": "PolymerElements/paper-scroll-header-panel#~1.0.6",
     "paper-material": "PolymerElements/paper-material#~1.0.1",
     "neon-animation": "PolymerElements/neon-animated-pages#~1.0.6",
-    "iron-pages": "PolymerElements/iron-pages#~1.0.3"
+    "iron-pages": "PolymerElements/iron-pages#~1.0.3",
+    "paper-item": "PolymerElements/paper-item#~1.0.2"
   }
 }
