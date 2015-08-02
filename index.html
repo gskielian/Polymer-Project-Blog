@@ -15,6 +15,7 @@
 <!-- <link rel="import" href="bower_components/paper-button/paper-button.html" > -->
 <!-- <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html" > -->
 <!-- <link rel="import" href="bower_components/polymer/polymer.html"> -->
+<link rel="import" href="bower_components/polymer/polymer.html">
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
 
   <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
@@ -23,12 +24,17 @@
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="bower_components/paper-button/paper-button.html">
-    <link rel="import" href="bower_components/neon-animated-pages.html">
-    <link rel="import" href="bower_components/neon-animations.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animated-pages.html">
+    <link rel="import" href="bower_components/neon-animation/neon-animations.html">
+    <link rel="import" href="bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
+    <link rel="import" href="bower_components/iron-pages/iron-pages.html">
   <link rel="import" href="blog-content-ee.html">
   <link rel="import" href="blog-content-fw.html">
   <link rel="import" href="blog-content-dn.html">
   <link rel="import" href="blog-content-ws.html">
+  <link rel="import" href="x-card.html">
+  <link rel="import" href="x-cards-list.html">
+
 
   <link rel="stylesheet" href="bower_components/paper-styles/demo.css">
 
@@ -79,25 +85,46 @@
   <!-- By default condensedHeaderHeight is 1/3 of the header's height.  Here
        we want to set the condensed header's height to be 64px. -->
   <paper-scroll-header-panel condenses header-height="256" condensed-header-height="64">
+  
 
     <paper-toolbar class="tall">
 
-      <paper-icon-button icon="arrow-back"></paper-icon-button>
+      <!-- <paper-icon-button icon="arrow-back"></paper-icon-button> -->
       <div class="flex"></div>
-      <paper-icon-button icon="search"></paper-icon-button>
+      <!-- <paper-icon-button icon="search"></paper-icon-button> -->
       <paper-icon-button icon="more-vert"></paper-icon-button>
       <div class="bottom title" style="padding-top: 4px; padding-bottom: 4px;">Selected Summaries</div>
 
     </paper-toolbar>
 
+  <iron-pages selected="0">
     <div class="content">
-      <blog-content-ee size="100"></blog-content-ee>
-      <blog-content-fw size="100"></blog-content-fw>
-      <blog-content-dn size="100"></blog-content-dn>
-      <blog-content-ws size="100"></blog-content-ws>
+      <blog-content-ee size="100" onclick="onPolymerClick()"></blog-content-ee>
+      <blog-content-fw size="100" onclick="onPolymerClick()"></blog-content-fw>
+      <blog-content-dn size="100" onclick="onPolymerClick()"></blog-content-dn>
+      <blog-content-ws size="100" onclick="onPolymerClick()"></blog-content-ws>
     </div>
+  <div onclick="onPolymerClick()">One</div>
+  <div onclick="onPolymerClick()">Two</div>
+  <div onclick="onPolymerClick()">Three</div>
+  </iron-pages>
 
   </paper-scroll-header-panel>
+
+
+
+
+  <script>
+    function onPolymerClick() {
+      var pages = document.querySelector('iron-pages');
+      setTimeout(function(){
+      pages.selectNext();
+        }, 300); 
+      }
+//    document.addEventListener('click', function(e) {
+ //     });
+
+    </script>
 
   <script>
 
@@ -113,31 +140,32 @@
 
   </script>
   
-    <script>
+    <!-- <script> -->
 
-      var scope = document.querySelector('template[is="dom-bind"]');
+    <!--   var scope = document.querySelector('template[is="dom-bind"]'); -->
 
-      scope._onPolymerClick = function(event) {
-        this.$.list.sharedElements = {
-          'ripple': event.target,
-          'reverse-ripple': event.target
-        };
-        this.$.pages.selected = 1;
-      };
+    <!--   scope._onPolymerClick = function(event) { -->
+    <!--     this.$.list.sharedElements = { -->
+    <!--       'ripple': event.target, -->
+    <!--       'reverse-ripple': event.target -->
+    <!--     }; -->
+    <!--     this.$.pages.selected = 1; -->
+    <!--     console.log("clicked"); -->
+    <!--   }; -->
 
-      scope._onAngularClick = function(event) {
-        this.$.list.sharedElements = {
-          'ripple': event.target,
-          'reverse-ripple': event.target
-        };
-        this.$.pages.selected = 2;
-      };
+    <!--   scope._onAngularClick = function(event) { -->
+    <!--     this.$.list.sharedElements = { -->
+    <!--       'ripple': event.target, -->
+    <!--       'reverse-ripple': event.target -->
+    <!--     }; -->
+    <!--     this.$.pages.selected = 2; -->
+    <!--   }; -->
 
-      scope._onBackClick = function(event) {
-        this.$.pages.selected = 0;
-      };
+    <!--   scope._onBackClick = function(event) { -->
+    <!--     this.$.pages.selected = 0; -->
+    <!--   }; -->
 
-    </script>
+    <!-- </script> -->
 
 </body>
 </html>
