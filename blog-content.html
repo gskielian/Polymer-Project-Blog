@@ -52,16 +52,15 @@
         subsubsubpost = "Part 1 is recap, each of these projects is meant to be useful and low-complexity for focusing on facets of the EDA tool -- which is in this case Eagle.";
 
           html +=
-          '<div style="position: relative; border: 1px solid #bebebe; padding: 16px; margin: 16px; border-radius: 5px; background-color: #fff; color: #555;"> ' +
+          '<div style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
 
             '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
             '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
             '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
             '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
             '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
-            '<paper-shadow z="2" animated></paper-shadow>' +
             '<paper-ripple></paper-ripple>' +
-            '</div>';
+            '</div></paper-material>';
 
         //second post
 
@@ -72,14 +71,15 @@
         subsubpost = "subsubpost"
 
           html +=
-            '<div style="border: 1px solid #bebebe; padding: 16px; margin: 16px; border-radius: 5px; background-color: #fff; color: #555;">' +
+          '<div style="margin-top:8px;margin-bottom:8px;"><paper-material elevation="2"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
 
             '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
             '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
             '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
             '<div style="font-size: 12px;">' + subsubpost + '</div>' +
             '<div style="font-size: 12px;">' +  subsubpost + '</div>' +
-            '</div>';
+            '<paper-ripple></paper-ripple>' + 
+            '</div></paper-material> </div>';
 
           this.$.content.innerHTML = html;
       }
