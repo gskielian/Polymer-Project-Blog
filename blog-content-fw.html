@@ -46,9 +46,10 @@
 
         category = "FW"
         circ_color = "#33b";
-        post = "Firmware"
-        subpost = "Click for long-description"
-        subsubpost = "Experience in programming PICs and Atmel chips, shifting-bits, writing registers, dealing with complications of incorporating hardware-interrupts."
+        post = "Firmware Exp."
+        subpost = "Atmel, PIC, &amp; Interfaces"
+        subsubpost = "Experience in programming PICs and Atmel chips, setting-fuses, selecting xtals, burning-bootloaders, using eeprom, shifting-bits-writing-registers, handling communication via i2c/spi/uart, and dealing with complications of incorporating hardware-interrupts."
+        subsubsubpost = "I am versed in both CLI (avr-gcc) and Arduino IDE (preferring vim as my external editor) for programming firmware onto Atmel Chips via FTDI cables, ISP headers, and conventional dual uC arduinos. Click for specific project links"
 
           html +=
           '<div style="margin-top:8px;margin-bottom:8px;"><paper-material elevation="2"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
@@ -56,7 +57,8 @@
             '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
             '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
             '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
-            '<div style="font-size: 12px;">' + subsubpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom:8px">' + subsubpost + '</div>' +
+            '<div style="font-size: 12px; margin-top:4px">' + subsubsubpost + '</div>' +
             '<paper-ripple></paper-ripple>' + 
             '</div></paper-material> </div>';
 

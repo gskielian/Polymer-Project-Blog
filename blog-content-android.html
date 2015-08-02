@@ -1,4 +1,4 @@
-<dom-module id="blog-content-ee">
+<dom-module id="blog-content-android">
   <template>
     <div id="content"></div>
   </template>
@@ -23,7 +23,7 @@
     }
 
     Polymer({
-      is: 'blog-content-ee',
+      is: 'blog-content-android',
 
       properties: {
         size: {
@@ -44,12 +44,13 @@
 
         //first post
 
-        category = "EE";
-        circ_color = "#922";
-        post = "Electrical Engineering Exp.";
-        subpost = "PCB Sch &amp; Layout, Op-Amp Topologies, Si-based Microfab";
-        subsubpost = "Every two weeks I send a board out for PCBA.  Simple, useful, and minimal-cost boards (single-sided smd whenever possible) keep up my chops and contribute to my team.";
-        subsubsubpost = "I have created various Android App hardware-integrated prototypes and have utilized headphone-jack/vco/fft approach, BTLE via the Nordic nrf8001, and the Project Ara I2cManager.";
+        category = "A";
+        circ_color = "#689F38";
+        post = "Android Development";
+        subpost = "Android App Dev, HW Integration, Kernel Compilation &amp; Internals";
+        subsubpost = "I am versed in development with both CLI based and Android Studio based methods of developing for Android platforms. I have created several apps and am a registered and published developer on Google Play.";
+        subsubsubpost = "I have created various Android App hardware-integrated prototypes including my headphone-jack vco/analog-voltage sensing device and app (using zero-crossing technique for readout), a BTLE wearable via the Nordic nrf8001, as well as the Project Ara I2cManager.";
+        subsubsubsubpost = "Significant experience building Android for the BBB, the Jetson TK1, the Pandaboard, Nexus devices, and Project Ara  platforms.";
 
           html +=
           '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
@@ -57,8 +58,9 @@
             '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
             '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
             '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
-            '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
-            '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
+            '<div style="font-size: 12px; padding-bottom: 8px;">' +  subsubpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom: 8px">' +  subsubsubpost + '</div>' + 
+            '<div style="font-size: 12px;">' +  subsubsubsubpost + '</div>' + 
             '<paper-ripple></paper-ripple>' +
             '</div></paper-material>';
 
