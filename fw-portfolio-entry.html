@@ -1,0 +1,81 @@
+<dom-module id="fw-portfolio-entry">
+  <template>
+    <div id="content"></div>
+  </template>
+</dom-module>
+
+<script>
+
+  (function() {
+
+    var strings = [
+      'something',
+      'something else',
+      'yet another thing'
+    ];
+
+    function randomString() {
+      return strings[Math.floor(Math.random() * strings.length)];
+    }
+
+    function randomLetter() {
+      return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+    }
+
+    Polymer({
+      is: 'fw-portfolio-entry',
+
+      properties: {
+        size: {
+          type: Number,
+          value: 0,
+          observer: 'sizeChanged'
+        }
+      },
+
+      sizeChanged: function() {
+        var html = '';
+
+        var circ_color = "#922";
+        var category = '';
+        var post = '';
+        var subpost = '';
+        var subsubpost = '';
+        var subsubsubpost = '';
+
+        //first post
+
+        category = "F1";
+        circ_color = "#33b";
+        post = "Coulomb Counter";
+        subpost = 'LTC4150: Measuring Battery Capacity';
+        subsubpost = 'The LTC4150 has a convenient breakout board provided by Sparkfun and was recommended by a colleague. In order to use this to quickly obtain coulombs while a battery was within the target voltage range, we used a digital potentiometer and an atmel328p.';
+        subsubsubpost = "The microcontroller code can be found within github in the link below.";
+
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="onSectionClick(0)">' +
+
+            '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
+            '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
+            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
+            '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+          subpost="https://github.com/gskielian/CCount"
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'https://github.com/gskielian/CCount\')">' +
+
+            '<div style="font-size: 12px;">' +  subpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+
+          this.$.content.innerHTML = html;
+      }
+    });
+  })();
+</script>

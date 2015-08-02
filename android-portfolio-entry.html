@@ -1,0 +1,81 @@
+<dom-module id="android-portfolio-entry">
+  <template>
+    <div id="content"></div>
+  </template>
+</dom-module>
+
+<script>
+
+  (function() {
+
+    var strings = [
+      'something',
+      'something else',
+      'yet another thing'
+    ];
+
+    function randomString() {
+      return strings[Math.floor(Math.random() * strings.length)];
+    }
+
+    function randomLetter() {
+      return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+    }
+
+    Polymer({
+      is: 'android-portfolio-entry',
+
+      properties: {
+        size: {
+          type: Number,
+          value: 0,
+          observer: 'sizeChanged'
+        }
+      },
+
+      sizeChanged: function() {
+        var html = '';
+
+        var circ_color = "#922";
+        var category = '';
+        var post = '';
+        var subpost = '';
+        var subsubpost = '';
+        var subsubsubpost = '';
+
+        //first post
+
+        category = "A";
+        circ_color = "#689F38";
+        post = "Android App Design";
+        subpost = 'Tap for BPM';
+        subsubpost = 'Using material design UI components, fragments, navigation layout, and keeping the UI-thread open (a heavy consideration for all android devs), I created an upgraded version of my TapforBPM app, which can help you pinpoint tempo for both original composers and for those musicians planning cover-songs.';
+        subsubsubpost = "Link to the github repo for the entire app is open-sourced below:";
+
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="onSectionClick(0)">' +
+
+            '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
+            '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
+            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
+            '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+          subpost="https://github.com/gskielian/Tap-for-BPM"
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'https://github.com/gskielian/Tap-for-BPM\')">' +
+
+            '<div style="font-size: 12px;">' +  subpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+
+          this.$.content.innerHTML = html;
+      }
+    });
+  })();
+</script>

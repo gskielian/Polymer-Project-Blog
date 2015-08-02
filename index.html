@@ -31,6 +31,11 @@
     <link rel="import" href="bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
     <link rel="import" href="bower_components/iron-pages/iron-pages.html">
   <link rel="import" href="blog-content-ee.html">
+  <link rel="import" href="ee-portfolio-entry.html">
+  <link rel="import" href="dn-portfolio-entry.html">
+  <link rel="import" href="fw-portfolio-entry.html">
+  <link rel="import" href="android-portfolio-entry.html">
+  <link rel="import" href="ws-portfolio-entry.html">
   <link rel="import" href="blog-content-android.html">
   <link rel="import" href="blog-content-fw.html">
   <link rel="import" href="blog-content-dn.html">
@@ -114,16 +119,25 @@
   <iron-pages selected="0">
     <div class="content">
       <blog-content-ee size="100" onclick="onSectionClick(1)"></blog-content-ee>
-      <blog-content-android size="100" onclick="onSectionClick(1)"></blog-content-android>
-      <blog-content-fw size="100" onclick="onSectionClick(2)"></blog-content-fw>
-      <blog-content-dn size="100" onclick="onSectionClick(3)"></blog-content-dn>
-      <blog-content-ws size="100" onclick="onSectionClick(1)"></blog-content-ws>
+      <blog-content-android size="100" onclick="onSectionClick(4)"></blog-content-android>
+      <blog-content-fw size="100" onclick="onSectionClick(3)"></blog-content-fw>
+      <blog-content-dn size="100" onclick="onSectionClick(2)"></blog-content-dn>
+      <blog-content-ws size="100" onclick="onSectionClick(5)"></blog-content-ws>
     </div>
     <div class="content">
-      <blog-content-fw size="100" onclick="onSectionClick(2)"></blog-content-fw>
-      <blog-content-ee size="100" onclick="onSectionClick(1)"></blog-content-ee>
-      <blog-content-ws size="100" onclick="onSectionClick(2)"></blog-content-ws>
-      <blog-content-dn size="100" onclick="onSectionClick(1)"></blog-content-dn>
+      <ee-portfolio-entry size="100" onclick="onSectionClick(0)"></ee-portfolio-entry>
+    </div>
+    <div class="content">
+      <dn-portfolio-entry size="100" onclick="onSectionClick(0)"></dn-portfolio-entry>
+    </div>
+    <div class="content">
+      <fw-portfolio-entry size="100"></fw-portfolio-entry>
+    </div>
+    <div class="content">
+      <android-portfolio-entry size="100" onclick="onSectionClick(0)"></android-portfolio-entry>
+    </div>
+    <div class="content">
+      <ws-portfolio-entry size="100" onclick="onSectionClick(0)"></ws-portfolio-entry>
     </div>
   <div onclick="onSectionClick(0)">One</div>
   <div onclick="onSectionClick(0)">Two</div>
@@ -164,33 +178,6 @@
     });
 
   </script>
-  
-    <!-- <script> -->
-
-    <!--   var scope = document.querySelector('template[is="dom-bind"]'); -->
-
-    <!--   scope._onPolymerClick = function(event) { -->
-    <!--     this.$.list.sharedElements = { -->
-    <!--       'ripple': event.target, -->
-    <!--       'reverse-ripple': event.target -->
-    <!--     }; -->
-    <!--     this.$.pages.selected = 1; -->
-    <!--     console.log("clicked"); -->
-    <!--   }; -->
-
-    <!--   scope._onAngularClick = function(event) { -->
-    <!--     this.$.list.sharedElements = { -->
-    <!--       'ripple': event.target, -->
-    <!--       'reverse-ripple': event.target -->
-    <!--     }; -->
-    <!--     this.$.pages.selected = 2; -->
-    <!--   }; -->
-
-    <!--   scope._onBackClick = function(event) { -->
-    <!--     this.$.pages.selected = 0; -->
-    <!--   }; -->
-
-    <!-- </script> -->
 
 </body>
 </html>

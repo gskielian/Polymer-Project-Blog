@@ -1,0 +1,82 @@
+<dom-module id="dn-portfolio-entry">
+  <template>
+    <div id="content"></div>
+  </template>
+</dom-module>
+
+<script>
+
+  (function() {
+
+    var strings = [
+      'something',
+      'something else',
+      'yet another thing'
+    ];
+
+    function randomString() {
+      return strings[Math.floor(Math.random() * strings.length)];
+    }
+
+    function randomLetter() {
+      return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+    }
+
+    Polymer({
+      is: 'dn-portfolio-entry',
+
+      properties: {
+        size: {
+          type: Number,
+          value: 0,
+          observer: 'sizeChanged'
+        }
+      },
+
+      sizeChanged: function() {
+        var html = '';
+
+        var circ_color = "#922";
+        var category = '';
+        var post = '';
+        var subpost = '';
+        var subsubpost = '';
+        var subsubsubpost = '';
+
+        //first post
+
+        category = "D1";
+        circ_color = "#2AA";
+        post = "Logo, App, and UI/UX Design";
+        subpost = 'Applied Modern Algebra';
+        subsubpost = 'My secret sauce has to do with modern algebra (only hint here). While I\'ve been consulting peers and young companies on web design, and strategies for recrafting UI/UX for keeping/on-boarding more users which stem from my long experience in creating guided experiences in-person (as MC/Event-lead for hackathons and events) as well as via tutorials and curriculums used both in the US and internationally.';
+        subsubsubpost = "";
+
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
+
+            '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
+            '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
+            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
+            '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+          subpost="Instructions were replicated in CS4HS in Sydney: http://sydney.edu.au/engineering/it/schools/cs4hs/past-workshops.shtml";
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'http://sydney.edu.au/engineering/it/schools/cs4hs/past-workshops.shtml\')">' +
+
+            '<div style="font-size: 12px;">' +  subpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+
+
+          this.$.content.innerHTML = html;
+      }
+    });
+  })();
+</script>

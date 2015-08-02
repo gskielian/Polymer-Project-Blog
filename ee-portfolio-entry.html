@@ -1,0 +1,72 @@
+<dom-module id="ee-portfolio-entry">
+  <template>
+    <div id="content"></div>
+  </template>
+</dom-module>
+
+<script>
+
+  (function() {
+
+    var strings = [
+      'something',
+      'something else',
+      'yet another thing'
+    ];
+
+    function randomString() {
+      return strings[Math.floor(Math.random() * strings.length)];
+    }
+
+    function randomLetter() {
+      return String.fromCharCode(65 + Math.floor(Math.random() * 26));
+    }
+
+    Polymer({
+      is: 'ee-portfolio-entry',
+
+      properties: {
+        size: {
+          type: Number,
+          value: 0,
+          observer: 'sizeChanged'
+        }
+      },
+
+      sizeChanged: function() {
+        var html = '';
+
+        var circ_color = "#922";
+        var category = '';
+        var post = '';
+        var subpost = '';
+        var subsubpost = '';
+        var subsubsubpost = '';
+
+        //first post
+
+        category = "E1";
+        circ_color = "#922";
+        post = "INA230 Footprint/Layout/Schem/PCBA";
+        subpost = 'The <a href="http://www.ti.com/lit/ds/symlink/ina230.pdf"> INA230</a> is an IC which can provide power readouts (after calibration) as well as current/voltage readouts.';
+        subsubpost = "I created a new library part for the INA230 via Eagle and selected compantible components from Digikey etc to send out for PCBA.";
+        subsubsubpost = "My design was tested against lab-multimeters, with reading of I2c data via the atmega328p uC.";
+
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
+
+            '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
+            '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
+            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
+            '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+
+          this.$.content.innerHTML = html;
+      }
+    });
+  })();
+</script>
