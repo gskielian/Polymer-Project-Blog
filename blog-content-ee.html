@@ -1,4 +1,4 @@
-<dom-module id="blog-content">
+<dom-module id="blog-content-ee">
   <template>
     <div id="content"></div>
   </template>
@@ -23,7 +23,7 @@
     }
 
     Polymer({
-      is: 'blog-content',
+      is: 'blog-content-ee',
 
       properties: {
         size: {
@@ -62,43 +62,6 @@
             '<paper-ripple></paper-ripple>' +
             '</div></paper-material>';
 
-        //second post
-
-        category = "CS"
-        circ_color = "#22A";
-        post = "post"
-        subpost = "subpost"
-        subsubpost = "subsubpost"
-
-          html +=
-          '<div style="margin-top:8px;margin-bottom:8px;"><paper-material elevation="2"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
-
-            '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
-            '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
-            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
-            '<div style="font-size: 12px;">' + subsubpost + '</div>' +
-            '<div style="font-size: 12px;">' +  subsubpost + '</div>' +
-            '<paper-ripple></paper-ripple>' + 
-            '</div></paper-material> </div>';
-
-        //third post
-
-        category = "DN"
-        circ_color = "#2AA";
-        post = "Design Activities"
-        subpost = "Selected Design Activities"
-        subsubpost = "In order to "
-
-          html +=
-          '<div style="margin-top:8px;margin-bottom:8px;"><paper-material elevation="2"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
-
-            '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
-            '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
-            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
-            '<div style="font-size: 12px;">' + subsubpost + '</div>' +
-            '<div style="font-size: 12px;">' +  subsubpost + '</div>' +
-            '<paper-ripple></paper-ripple>' + 
-            '</div></paper-material> </div>';
 
           this.$.content.innerHTML = html;
       }

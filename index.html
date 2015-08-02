@@ -22,7 +22,13 @@
   <link rel="import" href="bower_components/paper-material/paper-material.html">
   <link rel="import" href="bower_components/iron-icons/iron-icons.html">
   <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="blog-content.html">
+  <link rel="import" href="bower_components/paper-button/paper-button.html">
+    <link rel="import" href="bower_components/neon-animated-pages.html">
+    <link rel="import" href="bower_components/neon-animations.html">
+  <link rel="import" href="blog-content-ee.html">
+  <link rel="import" href="blog-content-fw.html">
+  <link rel="import" href="blog-content-dn.html">
+  <link rel="import" href="blog-content-ws.html">
 
   <link rel="stylesheet" href="bower_components/paper-styles/demo.css">
 
@@ -80,12 +86,15 @@
       <div class="flex"></div>
       <paper-icon-button icon="search"></paper-icon-button>
       <paper-icon-button icon="more-vert"></paper-icon-button>
-      <div class="bottom title">Title</div>
+      <div class="bottom title" style="padding-top: 4px; padding-bottom: 4px;">Selected Summaries</div>
 
     </paper-toolbar>
 
     <div class="content">
-      <blog-content size="100"></blog-content>
+      <blog-content-ee size="100"></blog-content-ee>
+      <blog-content-fw size="100"></blog-content-fw>
+      <blog-content-dn size="100"></blog-content-dn>
+      <blog-content-ws size="100"></blog-content-ws>
     </div>
 
   </paper-scroll-header-panel>
@@ -103,6 +112,32 @@
     });
 
   </script>
+  
+    <script>
+
+      var scope = document.querySelector('template[is="dom-bind"]');
+
+      scope._onPolymerClick = function(event) {
+        this.$.list.sharedElements = {
+          'ripple': event.target,
+          'reverse-ripple': event.target
+        };
+        this.$.pages.selected = 1;
+      };
+
+      scope._onAngularClick = function(event) {
+        this.$.list.sharedElements = {
+          'ripple': event.target,
+          'reverse-ripple': event.target
+        };
+        this.$.pages.selected = 2;
+      };
+
+      scope._onBackClick = function(event) {
+        this.$.pages.selected = 0;
+      };
+
+    </script>
 
 </body>
 </html>
