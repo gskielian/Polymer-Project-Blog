@@ -48,9 +48,9 @@
         category = "WS";
         circ_color = "#404";
         post = "Web Dev";
-        subpost = '';
-        subsubpost = 'Using material design UI components, fragments, navigation layout, and keeping the UI-thread open (a heavy consideration for all android devs), I created an upgraded version of my TapforBPM app, which can help you pinpoint tempo for both original composers and for those musicians planning cover-songs.';
-        subsubsubpost = "Link to the github repo for the entire app is open-sourced below:";
+        subpost = 'Websites of Different Purposes';
+        subsubpost = "I have made PHP/MySQL websites for online Lab-Notebook with automatic time-stamping, Python website (based on the Steve Huffman Udacity Course) with user-account management, using standard encryption techniques for username/password pair protection, MEAN.js stack for non-profit initiative called foodRev.";
+        subsubsubpost = "Full list of websites and short descriptions below:";
 
 
           html +=
@@ -59,17 +59,55 @@
             '<div style="display: inline-block; height: 64px; width: 64px; border-radius: 50%; background: ' + circ_color + '; line-height: 64px; font-size: 30px; color: #DDD; text-align: center;">'+ category + '</div>' +
             '<div style="font-size: 22px; padding: 8px 0 16px; color: #888;">' + post + '</div>' +
             '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
-            '<div style="font-size: 12px; padding-bottom: 3px;">' +  subsubpost + '</div>' +
+            '<div style="font-size: 12px; padding-bottom: 8px;">' +  subsubpost + '</div>' +
             '<div style="font-size: 12px;">' +  subsubsubpost + '</div>' + 
             '<paper-ripple></paper-ripple>' +
             '</div></paper-material>';
 
-          subpost="https://github.com/gskielian/Tap-for-BPM"
+          subpost='A local and compelling NPO initiative required a mobile-first, responsive website for on-boarding volunteers and donors. I contributed domain name and set up a server with some under-the-hood customizations to help them expand their program for connecting the hungry with food donors<br /><br />Click for http://foodrev.org/#!/'
+          subpost_url="http://foodrev.org/#!/"
 
           html +=
-          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'https://github.com/gskielian/Tap-for-BPM\')">' +
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'' + subpost_url + '\')">' +
 
             '<div style="font-size: 12px;">' +  subpost + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+          subpost='Three.js and HTML5 Projects, created for relevant topics (waves, planetary science, electrodynamics, etc.) for my students (during lunch and evenings) in my high-school science classes. Web-apps were a big hit, and increased student participation (as they could receive immediate feedback via relevant webapps and writing answers on google-form assignments). <br/> </br> Click here to view the Web-based Open-Education Resources Project: <br/>';
+          subpost_url="http://www.kielian.net/Main/EducationResources.html";
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'' + subpost_url + '\')">' +
+
+            '<div style="font-size: 12px;">' +  subpost + subpost_url + '</div>' + 
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+
+          subpost='<em>I have developed and taught web-design curriculum in Schools and Hackerspaces, some of my students and my own work provided below:</em>'
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;">' +
+
+            '<div style="font-size: 16px; padding-bottom: 8px;">' + subpost + '</div>' +
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+          var subpost_url_1="http://www.kielian.net/Main/Blog/ang-blog-post.html"
+          var subpost_url_2="http://mtfujisan.github.io/"
+          var subpost_url_3="http://alexander1987.github.io/"
+
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'' + subpost_url_1 + '\')">' + subpost_url_1 +
+
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'' + subpost_url_2 + '\')">' + subpost_url_2 +
+
+            '<paper-ripple></paper-ripple>' +
+            '</div></paper-material>';
+          html +=
+          '<div   style="margin-top:8px; margin-bottom: 8px"><paper-material elevation="2" animated="true"><div style="position: relative; padding: 18px; border-radius: 5px; background-color: #fff; color: #555;" onclick="window.open(\'' + subpost_url_3 + '\')">' + subpost_url_3 +
+
             '<paper-ripple></paper-ripple>' +
             '</div></paper-material>';
 
